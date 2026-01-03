@@ -1,0 +1,171 @@
+.camp-page {
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    display: grid;
+    grid-template-rows: 1fr 5fr;
+
+    padding: 1em 0.8em 1em 1.8em;
+
+    .camp-res-cntnr {
+        border-radius: 10px;
+        box-shadow: 0 2px 4px 0 black;
+        padding: 0.6em 1em;
+        transition: all 0.2s;
+        position: relative;
+
+    }
+
+    .camp-res-cntnr:hover {
+        box-shadow: 0 0px 8px 2px black;
+        transition: all 0.5s;
+    }
+
+    .camp-header-cntnr {
+        display: flex;
+        flex-direction: column;
+        place-self: start;
+        margin-bottom: 1em;
+
+        .camp-title-cntnr {
+            padding: 0.2em 0;
+            margin-bottom: 0.4em;
+        }
+
+        .camp-overview {
+            max-width: 30vw;
+            padding: 0.2em 0;
+
+        }
+    }
+
+    .camp-dits-cntnr {
+        place-self: start;
+        display: flex;
+        flex-direction: column;
+        gap: 4em;
+        width: 100%;
+
+
+        .camp-overview-cont {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1em;
+
+            .players-cntnr {
+                height: fit-content;
+            }
+
+            .story-sf-cont {
+                // margin-left: 1.2em;
+                max-width: 28em;
+                height: fit-content;
+                display: grid;
+                grid-template-areas:
+                    "hdr hdr hdr"
+                    "btn-prev ssf  btn-next";
+                gap: 0.2em;
+
+                .story-sf-title {
+                    grid-area: hdr;
+                }
+
+                .ssf-btn {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    background: none;
+                    border: none;
+                    border-radius: 4px;
+                    width: 2em;
+                    height: 2em;
+                    padding: 6px;
+                    margin: auto;
+                    overflow: hidden;
+                }
+
+                .ssf-btn:hover {
+                    cursor: pointer;
+                    backdrop-filter: brightness(90%);
+                    transition: 1s all;
+                }
+
+                .ssf-btn-prev {
+                    grid-area: btn-prev;
+                    position: relative;
+
+                    .btn-prev-icn {
+                        position: absolute;
+                    }
+                }
+
+                .ssf-btn-prev:hover {
+                    .btn-prev-icn {
+                        animation: 1s ease-in-out infinite slideright;
+                    }
+                }
+
+                .ssf-btn-nxt {
+                    grid-area: btn-next;
+                    position: relative;
+
+                    .btn-nxt-icn {
+                        position: absolute;
+                    }
+                }
+
+                .ssf-btn-nxt:hover {
+                    .btn-nxt-icn {
+                        animation: 1s ease-in-out infinite slideleft;
+                    }
+                }
+
+                .desc-txt {
+                    grid-area: ssf;
+                    padding: 2px;
+                }
+            }
+
+
+        }
+
+        .camp-resource-cont {
+            flex-grow: 1;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 0.4em;
+        }
+
+    }
+}
+
+@keyframes slideright {
+    from {
+        right: -100%;
+    }
+
+    to {
+        right: 105%;
+    }
+}
+
+@keyframes slideleft {
+    from {
+        left: -100%;
+    }
+
+    to {
+        left: 105%;
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

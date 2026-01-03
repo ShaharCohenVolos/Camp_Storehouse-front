@@ -1,0 +1,62 @@
+.main-header {
+    height: fit-content;
+    box-shadow: 0 4px 2px -2px var(--main-shadow);
+    padding: 0.4em 0.8em 0.4em 1.8em;
+
+    .hdr-nav {
+        /* position: relative; */
+        gap: 0.4em;
+        font-size: 1.2rem;
+
+        a {
+            text-decoration: none
+        }
+    }
+
+    .home-logo-cntnr {
+        font-size: 1.2rem;
+
+        .home-logo {
+            padding: 0.02em 0.1em;
+            border-radius: 0.1em;
+        }
+    }
+
+    .user-hdr-nav {
+
+        .login-logout-hdr-nav {
+            font-size: 1.2rem;
+        }
+
+        .user-img-wrpr {
+            display: flex;
+            flex-direction: column;
+            margin-left: 0.8em;
+
+            .user-nav-img {
+                height: 3em;
+                text-align: center;
+                box-shadow: 0 0 0.2em 0.1em var(--main-shadow);
+                backdrop-filter: brightness(160%);
+                border-radius: 50%;
+
+                .user-hdr-img {
+                    transition: 0.5s all ease;
+                }
+
+                transition: 0.5s all;
+            }
+
+            .user-nav-img:hover {
+                cursor: pointer;
+                box-shadow: 0 0 0.35em 0.1em var(--main-shadow);
+                backdrop-filter: brightness(200%);
+                transition: 0.5s all ease;
+
+                .user-hdr-img {
+                    scale: 1.1;
+                }
+            }
+        }
+    }
+}
